@@ -1,0 +1,12 @@
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material
+    container_name: mkdocs
+    network_mode: bridge
+    ports:
+      - "4008:8000"
+    volumes:
+      - ./:/docs
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
